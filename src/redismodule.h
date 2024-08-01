@@ -22,6 +22,7 @@
 #define REDISMODULE_LIST_TAIL 1
 
 /* Key types. */
+// `REDISMODULE_KEYTYPE_EMPTY` (0): 表示键在数据库中不存在。
 #define REDISMODULE_KEYTYPE_EMPTY 0
 #define REDISMODULE_KEYTYPE_STRING 1
 #define REDISMODULE_KEYTYPE_LIST 2
@@ -165,6 +166,7 @@ typedef uint64_t RedisModuleTimerID;
 typedef long long mstime_t;
 
 /* Incomplete structures for compiler checks but opaque access. */
+// RedisModuleCtx的具体实现只有在源文件中可见，而在头文件中只有前向声明。这种方法可以有效地隐藏实现细节，增强模块之间的独立性。
 typedef struct RedisModuleCtx RedisModuleCtx;
 typedef struct RedisModuleKey RedisModuleKey;
 typedef struct RedisModuleString RedisModuleString;
